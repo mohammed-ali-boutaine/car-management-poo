@@ -1,0 +1,42 @@
+.data-holder {
+     display: none; 
+     margin-top: 20px;
+   }
+   .data-holder.d-block {
+     display: block; 
+   }
+   .toggle-btn.active {
+     font-weight: bold;
+   }
+
+   /* .create-account-form {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   width: 90%;
+   max-width:500px;
+   background-color: #171a1c;
+   margin:50px auto 0px;
+   border:1px solid gray;
+   padding:50px 20px;
+   border-radius: 12px;
+ } */
+   nav{
+       background: #000;
+   }
+
+
+   form{
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+     width: 90%;
+     max-width:500px;
+     background-color: #171a1c;
+     margin:50px auto 0px;
+     border:1px solid gray;
+     padding:50px 20px;
+     border-radius: 12px;
+   }
