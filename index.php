@@ -1,8 +1,10 @@
 <?php
 // include "./config.php";
-include "./db/conn.php";
+// include "./db/conn.php";
 include "./functions/helpers.php";
 
+require_once "./classes/Database.php";
+require_once "./classes/Auth.php";
 
 // if session exists redirect to dashbord.php
 session_start();
@@ -29,30 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // login stuff
     }else{
 
+        $conn = new Database();
+        $auth = new UserAuth($conn);
 
-        $checkStmt = $conn->prepare("SELECT id, name, password FROM users WHERE email = ?");
-        $checkStmt->bind_param("s", $email);
-        $checkStmt->execute();
-        $checkStmt->store_result();
-
-        if ($checkStmt->num_rows > 0) {
-
-            $checkStmt->bind_result($id, $name, $hashed_password);
-            $checkStmt->fetch();
-
-            if (password_verify($password, $hashed_password)) {
-                // handle login
-                $_SESSION["user_id"] = $id;
-                $_SESSION["user_name"] = $name;
-                header("Location: dashboard.php");
-                exit();
-            } else {
-                $error = "invalide password.";
-            }
-        }else{
-            $error = "Email not exists.";
-        }
-        $checkStmt->close();
+        $message = $auth->login($email,$password);
 
     }
 }

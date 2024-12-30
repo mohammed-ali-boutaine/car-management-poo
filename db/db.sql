@@ -7,13 +7,13 @@ USE car_management_db;
 
 
 
-CREATE TABLE `clients` (
-  `cin` varchar(10) NOT NULL,
-  `nom` varchar(100) DEFAULT NULL,
-  `adress` varchar(255) DEFAULT NULL,
-  `tel` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`cin`)
-);
+  CREATE TABLE `clients` (
+    `cin` varchar(10) NOT NULL,
+    `nom` varchar(100) DEFAULT NULL,
+    `adress` varchar(255) DEFAULT NULL,
+    `tel` varchar(20) DEFAULT NULL,
+    PRIMARY KEY (`cin`)
+  );
 
 
 

@@ -1,14 +1,13 @@
 <?php
+
+require_once 'Database.php';
+
 class UserAuth {
     private $pdo;
 
-    public function __construct($host, $dbName, $username, $password) {
-        try {
-            $this->pdo = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            die("Database connection failed: " . $e->getMessage());
-        }
+    public function __construct(Database $database)
+    {
+         $this->pdo = $database->getConnection();
     }
 
     // Method to register a new user
@@ -46,7 +45,6 @@ class UserAuth {
         // Verify the password
         if (password_verify($password, $user['password'])) {
             // Start a session for the user
-            session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
 
@@ -59,9 +57,8 @@ class UserAuth {
     // Method to log out a user
     public function logout() {
         session_start();
-        session_unset();
         session_destroy();
-        return "Logged out successfully.";
+        return 1;
     }
 }
 

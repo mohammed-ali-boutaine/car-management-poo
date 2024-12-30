@@ -11,7 +11,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
       <!-- Logo/Name -->
-      <a class="navbar-brand" href="/dashboard.php">Dashboard - <span class="h6 text-primary"><u> <?php echo htmlspecialchars($_SESSION["user_name"]); ?></u></span> </a>
+      <a class="navbar-brand" href="/dashboard.php">Dashboard - <span class="h6 text-primary"><u> <?php echo htmlspecialchars($_SESSION["username"]); ?></u></span> </a>
       
       <!-- Toggle button for mobile -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,19 +24,19 @@
        
 
           <li class="nav-item  ms-4">
-            <button class=" btn mr-4 toggle-btn btn-outline-primary" id="client"><a href="../dashboard.php"> Clients</a></button>
+            <button class=" btn mr-4 toggle-btn btn-outline-primary" id="client"><a href="../../dashboard.php"> Clients</a></button>
           </li>
           <li class="nav-item  ms-4">
-            <button class=" btn btn-outline-primary mr-4  toggle-btn"  id="voiture"><a href="../dashboard.php"> Voitures</a></button>
+            <button class=" btn btn-outline-primary mr-4  toggle-btn"  id="voiture"><a href="../../dashboard.php"> Voitures</a></button>
           </li>
           <li class="nav-item  ms-4 me-8">
-            <button class=" btn btn-outline-primary  mr-4  toggle-btn"  id="contrat"><a href="../dashboard.php"> Contrats</a> </button>
+            <button class=" btn btn-outline-primary  mr-4  toggle-btn"  id="contrat"><a href="../../dashboard.php"> Contrats</a> </button>
           </li>
           <li class="nav-item  ms-4">
-        <button class="btn btn-secondary " id="create-account-toggle"><a href="../dashboard.php">Create User</a> </button>
+        <button class="btn btn-secondary " id="create-account-toggle"><a href="../../dashboard.php">Create User</a> </button>
           </li>
           <li class="nav-item  ms-4">
-            <a class="nav-link text-danger  mr-4" href="../pages/logout.php">Logout</a>
+            <a class="nav-link text-danger  mr-4" href="../../pages/logout.php">Logout</a>
           </li>
         </ul>
       </div>
